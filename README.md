@@ -33,3 +33,7 @@
 
 - Vue 3
 - Vite
+
+## Потрогать сервис
+
+- Перейдите по ссылке `https://word-parser.ddns.net/`
