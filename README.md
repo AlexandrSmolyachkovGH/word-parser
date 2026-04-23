@@ -17,21 +17,17 @@
    git clone https://github.com/AlexandrSmolyachkovGH/word-parser.git
    cd ./word-parser
    ```
-2. Перейдите в директорию приложения:
-   ```bash
-   cd ./word_parser
-   ```
 
-3. Создайте .env файл:
+2. Создайте .env файл:
     ```bash
    cp .env.example .env
    ```
    В качестве ключа VITE_OPENROUTER_API_KEY установите ваш API_KEY от OPENROUTER.
-4. Запустите проект через Docker:
+3. Запустите проект через Docker:
     ```bash
    docker compose up -d --build
    ```
-5. Перейдите по ссылке `http://localhost:8080/`
+4. Перейдите по ссылке `http://localhost:8080/`
 
 ## Технологии
 

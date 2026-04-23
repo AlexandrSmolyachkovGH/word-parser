@@ -15,6 +15,7 @@ env/
 
 # Other
 instructions.md
+node_modules/
 
 # Poetry
 .poetry/
