@@ -3,6 +3,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        VITE_OPENROUTER_API_KEY: ${VITE_OPENROUTER_API_KEY}
+        VITE_OPENROUTER_MODEL: ${VITE_OPENROUTER_MODEL:-z-ai/glm-4.5-air:free}
     ports:
-      - "8080:80"
+      - "80:80"
+      - "443:443"
     restart: unless-stopped
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+

@@ -581,7 +581,7 @@ function setMarker(word, marker) {
               <tr v-for="word in sortedWords" :key="word.word" @click="filterByWord(word.word)" @click.ctrl="toggleWordSelection(word.word, $event)" @click.meta="toggleWordSelection(word.word, $event)" @click.shift="toggleWordSelection(word.word, $event)" :class="{ clickable: true, selected: selectedWords.includes(word.word) }">
                 <td class="word-cell">{{ word.word }}</td>
                 <td class="readonly">{{ word.freq }}</td>
-                <td @click.stop class="readonly">
+                <td class="marker-cell" @click.stop>
                   <select :value="wordMarkers[word.word] || ''" @change="setMarker(word.word, $event.target.value)">
                     <option v-for="m in MARKERS" :key="m.value" :value="m.value">{{ m.label }}</option>
                   </select>
@@ -900,6 +900,22 @@ tr.selected td.word-cell {
 td.word-cell {
   user-select: text;
   cursor: pointer;
+}
+
+td.marker-cell select {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+td.readonly {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+td.readonly select {
+  pointer-events: auto;
 }
 
 td.readonly {
